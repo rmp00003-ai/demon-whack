@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0D0025">
+  <title>惡魔快打</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ─── START SCREEN ─── -->
+<div id="screen-start" class="screen active">
+  <div class="game-title">惡魔快打</div>
+  <div class="game-subtitle">DEMON WHACK</div>
+
+  <div class="select-group">
+    <div class="select-label">選擇難度</div>
+    <div class="btn-row">
+      <button class="btn" data-diff="easy">簡單</button>
+      <button class="btn" data-diff="medium">普通</button>
+      <button class="btn" data-diff="hard">困難</button>
+    </div>
+  </div>
+
+  <div class="select-group">
+    <div class="select-label">選擇模式</div>
+    <div class="btn-row">
+      <button class="btn" data-mode="single">單局制</button>
+      <button class="btn" data-mode="level">關卡制</button>
+    </div>
+  </div>
+
+  <button id="btn-start" class="btn-start" disabled>開始挑戰</button>
+</div>
+
+<!-- ─── GAME SCREEN ─── -->
+<div id="screen-game" class="screen">
+
+  <!-- Status bar -->
+  <div id="status-bar">
+    <div class="bar-group">
+      <span class="bar-label">惡魔 HP</span>
+      <div class="bar-track"><div id="hp-fill" class="bar-fill"></div></div>
+    </div>
+    <div class="bar-group">
+      <span class="bar-label">憤怒值</span>
+      <div class="bar-track"><div id="rage-fill" class="bar-fill"></div></div>
+    </div>
+    <div id="level-info"></div>
+  </div>
+
+  <!-- Arena -->
+  <div id="arena">
+
+    <!-- Background stars -->
+    <div class="stars"></div>
+
+    <!-- Lanterns -->
+    <div class="lantern lantern-left">
+      <div class="lantern-rope"></div>
+      <div class="lantern-body">祭</div>
+    </div>
+    <div class="lantern lantern-right">
+      <div class="lantern-rope"></div>
+      <div class="lantern-body">鬼</div>
+    </div>
+
+    <!-- Demon -->
+    <div id="demon-wrap"></div>
+
+    <!-- Target word -->
+    <div id="target-box">
+      <div id="target-word"></div>
+    </div>
+
+    <!-- Progress -->
+    <div id="progress-wrap"></div>
+
+  </div>
+
+  <!-- Platform -->
+  <div id="platform-wrap">
+    <div id="platform-line"></div>
+    <div id="platform-board">
+      <div id="characters-container"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─── RESULT SCREEN ─── -->
+<div id="screen-result" class="screen">
+  <div id="result-title"></div>
+  <div id="result-stats"></div>
+  <button id="btn-play-again" class="btn-start">再玩一次</button>
+</div>
+
+<script src="words.js"></script>
+<script src="characters.js"></script>
+<script src="game.js"></script>
+
+<script>
+  // Inject demon SVG on load
+  document.getElementById('demon-wrap').innerHTML = createDemonSVG();
+</script>
+
+</body>
+</html>
