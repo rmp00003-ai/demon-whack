@@ -37,6 +37,13 @@
 <!-- ─── GAME SCREEN ─── -->
 <div id="screen-game" class="screen">
 
+  <!-- Word info panel (top right) -->
+  <div id="word-info" class="hidden">
+    <div id="wi-zh"></div>
+    <div id="wi-en"></div>
+    <div id="wi-ipa"></div>
+  </div>
+
   <!-- Status bar -->
   <div id="status-bar">
     <div class="bar-group">
@@ -52,31 +59,12 @@
 
   <!-- Arena -->
   <div id="arena">
-
-    <!-- Background stars -->
     <div class="stars"></div>
-
-    <!-- Lanterns -->
-    <div class="lantern lantern-left">
-      <div class="lantern-rope"></div>
-      <div class="lantern-body">祭</div>
-    </div>
-    <div class="lantern lantern-right">
-      <div class="lantern-rope"></div>
-      <div class="lantern-body">鬼</div>
-    </div>
-
-    <!-- Demon -->
+    <div class="lantern lantern-left"><div class="lantern-rope"></div><div class="lantern-body">祭</div></div>
+    <div class="lantern lantern-right"><div class="lantern-rope"></div><div class="lantern-body">鬼</div></div>
     <div id="demon-wrap"></div>
-
-    <!-- Target word -->
-    <div id="target-box">
-      <div id="target-word"></div>
-    </div>
-
-    <!-- Progress -->
+    <div id="target-box"><div id="target-word"></div></div>
     <div id="progress-wrap"></div>
-
   </div>
 
   <!-- Platform -->
@@ -99,11 +87,8 @@
 <script src="words.js"></script>
 <script src="characters.js"></script>
 <script src="game.js"></script>
-
 <script>
-  // Inject demon SVG on load
   document.getElementById('demon-wrap').innerHTML = createDemonSVG();
 </script>
-
 </body>
 </html>
